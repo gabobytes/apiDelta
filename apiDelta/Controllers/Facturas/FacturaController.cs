@@ -54,6 +54,35 @@ namespace apiDelta.Controllers.Facturas
         }
 
 
+        [HttpGet("{id:int}")]
+        public JsonResult Get(int id)
+        {
+            string query = @" SELECT  f.`nombrecliente`, P.`producto`,f.`total`
+            FROM facturas f
+            INNER JOIN `facturaproducto` fp on f.`idfactura` = fp.`idfactura`
+            INNER JOIN `productos` p on p.`idproducto` = fp.`idproducto`
+            WHERE f.`numerofactura`  = @id;";
+            string sqlDataSource = _configuration.GetConnectionString("DeltaAppCon");
+
+            using (MySqlConnection myCon = new MySqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (MySqlCommand myCommand = new MySqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@id", id);
+
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+                    myReader.Close();
+                }
+                myCon.Close();
+
+            }
+
+            return new JsonResult(table);
+
+        }
+
         [HttpPost]
         public JsonResult Post(Factura fac)
         {

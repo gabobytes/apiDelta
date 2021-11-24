@@ -34,3 +34,4 @@ D:\Dropbox\Sodexo\api\apiDelta\apiDelta\bin\Debug\netcoreapp3.1\System.Configura
 D:\Dropbox\Sodexo\api\apiDelta\apiDelta\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 D:\Dropbox\Sodexo\api\apiDelta\apiDelta\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\Dropbox\Sodexo\api\apiDelta\apiDelta\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Dropbox\Sodexo\api\apiDelta\apiDelta\obj\Debug\netcoreapp3.1\apiDelta.csproj.AssemblyReference.cache
